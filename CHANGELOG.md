@@ -1,11 +1,18 @@
 ## [Unreleased]
 
-- feature: Rename gem to wisper-sidekiq-compat
-- removes: Support for Ruby < 3
-- removes: Support for Sidekiq < 6.5
-- removes: Rubinius support
-- fixes: Compatibility with wisper-compat
-- fixes: `Psych::DisallowedClass: Tried to load unspecified class:` on Ruby 3.1
+## [2.0.0] - 28/Feb/2023
+
+## Changed
+- Name of gem -> wisper-sidekiq-compat
+
+## Removed
+- Support for Ruby < 3
+- Support for Sidekiq < 6.5
+- Rubinius support
+ 
+## Fixed
+- Compatibility with wisper-compat
+- `Psych::DisallowedClass: Tried to load unspecified class:` on Ruby 3.1
 
 ## [1.3.0] - 25/Nov/2019
 
