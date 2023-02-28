@@ -3,23 +3,20 @@
 Provides [Wisper](https://github.com/nedap/wisper-compat) with asynchronous event
 publishing using [Sidekiq](https://github.com/mperham/sidekiq).
 
-[![Gem Version](https://badge.fury.io/rb/wisper-sidekiq.png)](http://badge.fury.io/rb/wisper-sidekiq)
-[![Code Climate](https://codeclimate.com/github/krisleech/wisper-sidekiq.png)](https://codeclimate.com/github/krisleech/wisper-sidekiq)
-[![Build Status](https://travis-ci.org/krisleech/wisper-sidekiq.png?branch=master)](https://travis-ci.org/krisleech/wisper-sidekiq)
-[![Coverage Status](https://coveralls.io/repos/krisleech/wisper-sidekiq/badge.png?branch=master)](https://coveralls.io/r/krisleech/wisper-sidekiq?branch=master)
+[![Gem Version](https://badge.fury.io/rb/wisper-sidekiq-compat.png)](http://badge.fury.io/rb/wisper-sidekiq-compat)
 
 ## Installation
 
 ### Sidekiq 5+
 
 ```ruby
-gem 'wisper-sidekiq', '~> 1.0'
+gem 'wisper-sidekiq-compat', '~> 1.0'
 ```
 
 ### Sidekiq 4-
 
 ```ruby
-gem 'wisper-sidekiq', '~> 0.0'
+gem 'wisper-sidekiq-compat', '~> 0.0'
 ```
 
 ## Usage
@@ -90,7 +87,7 @@ In both cases there is also available the `perform_at` option.
 The same Ruby versions as Sidekiq are offically supported, but it should work
 with any 2.x syntax Ruby including JRuby and Rubinius.
 
-See the [build status](https://travis-ci.org/krisleech/wisper-sidekiq) for details.
+See the [build status](https://travis-ci.org/nedap/wisper-sidekiq-compat) for details.
 
 ## Running Specs
 
