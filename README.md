@@ -1,6 +1,6 @@
 # Wisper::Sidekiq
 
-Provides [Wisper](https://github.com/nedap/wisper-compat) with asynchronous event
+Provides [Wisper-Compat](https://github.com/nedap/wisper-compat) with asynchronous event
 publishing using [Sidekiq](https://github.com/mperham/sidekiq).
 
 [![Gem Version](https://badge.fury.io/rb/wisper-sidekiq-compat.png)](http://badge.fury.io/rb/wisper-sidekiq-compat)
@@ -8,7 +8,7 @@ publishing using [Sidekiq](https://github.com/mperham/sidekiq).
 ## Installation
 
 ```ruby
-gem 'wisper-sidekiq-compat', '~> 1.0'
+gem 'wisper-sidekiq-compat'
 ```
 
 ## Usage
@@ -44,7 +44,7 @@ In order to define custom [sidekiq_options](https://github.com/mperham/sidekiq/w
 
 In order be able to schedule jobs to be run in the future following [Scheduled Jobs](https://github.com/mperham/sidekiq/wiki/Scheduled-Jobs) you can add `sidekiq_schedule_options` class method in your subscriber definition - those options will be passed to Sidekiq's `perform_in` method when the worker is called.
 
-This feature is not as powerfull as Sidekiq's API that allows you to set this on every job enqueue, in this case you're able to set this for the hole listener class like:
+This feature is not as powerful as Sidekiq's API that allows you to set this on every job enqueue, in this case you're able to set this for the hole listener class like:
 ```ruby
 class MyListener
   #...
@@ -73,13 +73,6 @@ class MyListener
 end
 ```
 In both cases there is also available the `perform_at` option.
-
-## Compatibility
-
-The same Ruby versions as Sidekiq are offically supported, but it should work
-with any 2.x syntax Ruby including JRuby.
-
-See the [build status](https://travis-ci.org/nedap/wisper-sidekiq-compat) for details.
 
 ## Running Specs
 
