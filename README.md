@@ -7,16 +7,8 @@ publishing using [Sidekiq](https://github.com/mperham/sidekiq).
 
 ## Installation
 
-### Sidekiq 5+
-
 ```ruby
 gem 'wisper-sidekiq-compat', '~> 1.0'
-```
-
-### Sidekiq 4-
-
-```ruby
-gem 'wisper-sidekiq-compat', '~> 0.0'
 ```
 
 ## Usage
@@ -91,12 +83,20 @@ See the [build status](https://travis-ci.org/nedap/wisper-sidekiq-compat) for de
 
 ## Running Specs
 
+Redis needs to be running. If you don't have an instance of redis on your machine, you can use the provided `docker-compose.yml`:
+
+```
+docker compose up -d
+```
+
+You also need to be running sidekiq via `scripts/sidekiq`:
+
 ```
 scripts/sidekiq
-bundle exec rspec
 ```
 
-## Contributing
+Finally:
 
-To run sidekiq use `scripts/sidekiq`. This wraps sidekiq in [rerun](https://github.com/alexch/rerun)
-which will restart sidekiq when `specs/dummy_app` changes.
+```
+bundle exec rspec
+```

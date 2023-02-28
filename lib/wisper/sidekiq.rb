@@ -31,7 +31,7 @@ module Wisper
       end
     end
 
-    def broadcast(subscriber, publisher, event, args)
+    def broadcast(subscriber, _publisher, event, *args, **_kwargs)
       options = sidekiq_options(subscriber)
       schedule_options = sidekiq_schedule_options(subscriber, event)
 
