@@ -150,7 +150,7 @@ RSpec.describe Wisper::SidekiqBroadcaster do
       let(:event) { 'it_happened' }
       let(:args) { [1,2,3] }
 
-      subject(:broadcast_event) { described_class.new.broadcast(subscriber, nil, event, args) }
+      subject(:broadcast_event) { described_class.new.broadcast(subscriber, nil, event, *args) }
 
       it 'subscriber receives event with corrects args' do
         expect(RegularSubscriberUnderTest).to receive(event).with(*args)
