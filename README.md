@@ -1,6 +1,6 @@
 # Wisper::Sidekiq
 
-Provides [Wisper](https://github.com/krisleech/wisper) with asynchronous event
+Provides [Wisper](https://github.com/nedap/wisper-compat) with asynchronous event
 publishing using [Sidekiq](https://github.com/mperham/sidekiq).
 
 [![Gem Version](https://badge.fury.io/rb/wisper-sidekiq.png)](http://badge.fury.io/rb/wisper-sidekiq)
