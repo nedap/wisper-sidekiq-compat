@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'wisper/sidekiq/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "wisper-sidekiq"
+  spec.name          = "wisper-sidekiq-compat"
   spec.version       = Wisper::Sidekiq::VERSION
-  spec.authors       = ["Kris Leech"]
-  spec.email         = ["kris.leech@gmail.com"]
+  spec.authors       = ["Kris Leech", "Jamie Schembri"]
+  spec.email         = ["kris.leech@gmail.com", "jamie.schembri@nedap.com"]
   spec.summary       = 'Async publishing for Wisper using Sidekiq'
-  spec.description   = 'Async publishing for Wisper using Sidekiq'
-  spec.homepage      = "https://github.com/krisleech/wisper-sidekiq"
+  spec.description   = spec.summary
+  spec.homepage      = "https://github.com/nedap/wisper-sidekiq-compat"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
@@ -18,6 +18,6 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency 'wisper'
+  spec.add_dependency 'wisper-compat'
   spec.add_dependency 'sidekiq', '>=4.1'
 end
