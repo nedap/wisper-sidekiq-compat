@@ -1,11 +1,4 @@
-require 'coveralls'
-require 'simplecov'
-require 'pry' unless ENV['CI']
 require 'sidekiq/testing'
-
-SimpleCov.formatter = Coveralls::SimpleCov::Formatter
-
-SimpleCov.start { add_filter 'spec/dummy_app' }
 
 if defined?(RUBY_ENGINE) && RUBY_ENGINE == 'rbx'
   YAML::ENGINE.yamler = 'psych'
