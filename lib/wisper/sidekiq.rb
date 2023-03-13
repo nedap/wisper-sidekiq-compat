@@ -14,13 +14,13 @@ module Wisper
       include ::Sidekiq::Worker
 
       def perform(yml)
-        (subscriber, event, args) =
+        (subscriber, event, args, kwargs) =
           if Psych::VERSION.to_i >= 4
             ::YAML.unsafe_load(yml)
           else
             ::YAML.load(yml)
           end
-        subscriber.public_send(event, *args)
+        subscriber.public_send(event, *args, **kwargs)
       end
     end
 
@@ -31,13 +31,13 @@ module Wisper
       end
     end
 
-    def broadcast(subscriber, _publisher, event, *args, **_kwargs)
+    def broadcast(subscriber, _publisher, event, *args, **kwargs)
       options = sidekiq_options(subscriber)
       schedule_options = sidekiq_schedule_options(subscriber, event)
 
       Worker.set(options).perform_in(
         schedule_options.fetch(:delay, 0),
-        ::YAML.dump([subscriber, event, args])
+        ::YAML.dump([subscriber, event, args, kwargs])
       )
     end
 
