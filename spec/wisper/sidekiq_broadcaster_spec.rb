@@ -145,15 +145,17 @@ RSpec.describe Wisper::SidekiqBroadcaster do
         .to change { Sidekiq::Queues["default"].select{|job| job.key?('at')}.size }.by(1)
     end
 
-    context 'when provides subscriber with args' do
+    context 'when provides subscriber with args and/or kwargs' do
       let(:subscriber) { RegularSubscriberUnderTest }
       let(:event) { 'it_happened' }
       let(:args) { [1,2,3] }
+      let(:kwargs) { {hi: :there}}
 
-      subject(:broadcast_event) { described_class.new.broadcast(subscriber, nil, event, *args) }
+
+      subject(:broadcast_event) { described_class.new.broadcast(subscriber, nil, event, *args, **kwargs) }
 
       it 'subscriber receives event with corrects args' do
-        expect(RegularSubscriberUnderTest).to receive(event).with(*args)
+        expect(RegularSubscriberUnderTest).to receive(event).with(*args, **kwargs)
 
         Sidekiq::Testing.inline! { broadcast_event }
       end
