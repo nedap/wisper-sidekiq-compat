@@ -1,4 +1,7 @@
-## [Unreleased]
+## [2.2.0] - 20/Dec/2023
+
+## Fixed
+- Allow Sidekiq versions beyond 6.
 
 ## [2.0.0] - 28/Feb/2023
 
@@ -9,7 +12,7 @@
 - Support for Ruby < 3
 - Support for Sidekiq < 6.5
 - Rubinius support
- 
+
 ## Fixed
 - Compatibility with wisper-compat
 - `Psych::DisallowedClass: Tried to load unspecified class:` on Ruby 3.1
