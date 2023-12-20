@@ -1,3 +1,8 @@
+## [2.3.0] - 20/Dec/2023
+
+## Fixed
+- Fixed version mess.
+
 ## [2.2.0] - 20/Dec/2023
 
 ## Fixed
